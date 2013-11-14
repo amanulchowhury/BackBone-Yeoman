@@ -1,0 +1,42 @@
+<div class="thumbnail">
+	<div class="row">
+		<img src="{{poster.cover}}" alt="{{title}}" class="col-lg-3 col-md-3 col-sm-3"/>
+		<div class="caption col-lg-9 col-md-9 col-sm-9">
+			<div class="page-heading">
+				<h3>
+					{{title}} {{#if rated}}[ <span class="text-info">{{rated}} </span>]{{/if}}
+				</h3>
+				<p>Year: <span class="text-primary">{{year}}</span></p>
+				<p>
+					<h4 class="text-muted">Genres:</h4>
+					<div>
+						{{#each genres}}
+							<span class="label label-primary">{{this}}</span>
+						{{/each}}
+					</div>
+				</p>
+			</div>
+			<p class="plot show-plot plot-simple">
+				{{plot_simple}}
+				<a class="more" href="#">More...</a>
+			</p>
+			<p class="plot-ext hide-plot">
+				{{plot}}
+				<a class="less" href="#">Less...</a>
+			</p>
+			<p>
+				<h4 class="text-muted">Cast: </h4>
+				{{#each actors}}
+					<span class="label label-default">{{this}}</span>
+				{{/each}}
+			</p>
+	    </div>
+    </div>
+    <div class="item-button">
+		{{#if favorite}}
+	        <button class="btn btn-primary destroy pull-right">Delete</button>
+	        {{else}}
+	            <button class="btn btn-primary add-movie pull-right">Add to Gallery</button>
+	    {{/if}}
+	</div>
+</div>
